@@ -4,7 +4,7 @@ Portfolio of my data science project(s).
 
 My Linkedin profile: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
 
-My Kaggle profile: [Kaggle](kaggle.com/waydeherman/)
+My Kaggle profile: [Kaggle](https://www.kaggle.com/waydeherman/)
 
 **Noteable achievements** include coming top 2% in [Kaggle CareerCon 2019](https://www.kaggle.com/c/career-con-2019) competition as well as coming 5th (out of 1600 students) in [mlcourse.ai](https://mlcourse.ai/rating)
 
@@ -20,4 +20,4 @@ The models are evaluated both by the prediction performance as well as the calib
 
 **Keywords:** Python (Pandas, Matplotlib) / Logistic Regression / SVM / Random Forest / Gradboost / XGBoost / Calibration / Model Pipeline
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![Example Result](https://github.com/WaydeHerman/Expected_Goals/blob/master/Games/Arsenal_Chelsea_2014-2015.png)
