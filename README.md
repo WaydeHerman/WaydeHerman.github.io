@@ -3,9 +3,10 @@
 Portfolio of my data science project(s).
 
 My Linkedin profile: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
+
 My Kaggle profile: [Kaggle](kaggle.com/waydeherman/)
 
-Noteable achievements include coming top 2% in [Kaggle CareerCon 2019](https://www.kaggle.com/c/career-con-2019) competition as well as coming 5th (out of 1600 students) in [mlcourse.ai](https://mlcourse.ai/rating)
+**Noteable achievements** include coming top 2% in [Kaggle CareerCon 2019](https://www.kaggle.com/c/career-con-2019) competition as well as coming 5th (out of 1600 students) in [mlcourse.ai](https://mlcourse.ai/rating)
 
 ### [Expected Goals Model:](https://github.com/WaydeHerman/Expected_Goals)
 
