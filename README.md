@@ -4,7 +4,7 @@ Portfolio of my data science project(s).
 
 More information about me: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
 
-### Expected Goals Model:
+### [Expected Goals Model:](https://www.linkedin.com/in/wayde-herman/)
 
 An end-to-end football expected goals model. The predictions are the probability of a shot resulting in a goal.
 
