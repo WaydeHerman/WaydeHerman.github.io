@@ -21,3 +21,5 @@ The models are evaluated both by the prediction performance as well as the calib
 **Keywords:** Python (Pandas, Matplotlib) / Logistic Regression / SVM / Random Forest / Gradboost / XGBoost / Calibration / Model Pipeline
 
 ![example result](/Arsenal_Chelsea_2014-2015.png "Example Result")
+
+---
