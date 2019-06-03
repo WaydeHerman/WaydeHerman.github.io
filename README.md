@@ -1,8 +1,8 @@
 # Data Science Portfolio
 
-Portfolio of my data science projects.
+Portfolio of my data science project(s).
 
-More information about me: LinkedIn
+More information about me: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
 
 ### Expected Goals Model:
 
