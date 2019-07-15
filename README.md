@@ -26,6 +26,18 @@ The models are evaluated both by their predictive performance as well as the cal
 
 ---
 
+### [Kaggle CareerCon 2019:](https://github.com/WaydeHerman/Kaggle_CareerCon_2019)
+
+My top 2% solution to [Kaggle's CareerCon 2019 competition](https://www.kaggle.com/c/career-con-2019)
+
+Interesting things about this project include the out-of-the-box solution used to overcome the noise in the data. The sequences provided were too noisy to classify accurately so a novel method of chaining together sequences was used. This method was based on the sequences' orientation data.
+
+Each sequence was first labelled using a random forest classifier. Then the sequences were chained together. Each sequence then 'voted' for the classification of the entire chain which then overruled each individual sequence's original labels.
+
+**Keywords:** Python / Time Series / Scikit Learn / Random Forest
+
+---
+
 ### [Categorical Feature Encoding Tutorial:](https://www.kaggle.com/waydeherman/tutorial-categorical-encoding)
 
 Tutorial describing various ways of representing categorical features for machine learning models.
