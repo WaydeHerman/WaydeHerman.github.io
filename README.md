@@ -1,6 +1,6 @@
 # Data Science Portfolio
 
-Portfolio of my data science project(s).
+Portfolio of my data science projects.
 
 My Linkedin profile: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
 
