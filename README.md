@@ -2,11 +2,11 @@
 
 Portfolio of my data science projects.
 
-My Linkedin profile: [Linkedin](https://www.linkedin.com/in/wayde-herman/)
+My [Linkedin profile.](https://www.linkedin.com/in/wayde-herman/)
 
-My Kaggle profile: [Kaggle](https://www.kaggle.com/waydeherman/)
+My [Kaggle profile.](https://www.kaggle.com/waydeherman/)
 
-My HackerRank profile: [HackerRank](https://www.hackerrank.com/wayde_h)
+My [HackerRank profile.](https://www.hackerrank.com/wayde_h)
 
 **Noteable achievements** include coming in the top 2% in [Kaggle CareerCon 2019](https://www.kaggle.com/c/career-con-2019) competition as well as coming 5th (out of 1600 students) in [mlcourse.ai](https://mlcourse.ai/rating)
 
