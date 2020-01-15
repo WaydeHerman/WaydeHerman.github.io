@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<style type="text/css">
+  body {
+    margin: 0;
+  }
+
+  .container-mb {
+    max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header {
+    background-color: black;
+    padding: 0;
+    margin: auto;
+    height: 100px;
+    box-sizing: border-box;
+  }
+
+  .footer {
+    background-color: black;
+    padding: 0;
+    margin: auto;
+    height: 100px;
+    box-sizing: border-box;
+  }
+
+  .division {
+    background-color: black;
+    padding: 0;
+    margin: auto;
+    height: 25px;
+    box-sizing: border-box;
+  }
+
+  .container-title {
+    color: white;
+    padding: 25px 200px;
+    font-family: "Futura";
+    font-size: 16px;
+  }
+
+
+
+  h1 {
+    font-size: 30px;
+    margin-block-start: 0px;
+  }
+
+  .item {
+    background-color: #ddd;
+    position: relative;
+    text-align: center;
+  }
+
+  .item-header {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  .text-block {
+    position: absolute;
+    font-family: "Futura";
+    text-align: left;
+    top: 10px;
+    left: 15%;
+    max-width: 455px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .text-block-alt {
+    position: absolute;
+    font-family: "Futura";
+    text-align: left;
+    top: 10px;
+    right: 15%;
+    max-width: 455px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .text-block-xg {
+    top: 75px;
+  }
+
+  .text-blog-map-demo {
+    top: 75px;
+  }
+
+  .text-blog-kaggle-comp {
+    top: 75px;
+  }
+
+  .container-item {    
+    height: 600px;
+    background-color: white;
+  }
+
+  .container-item-a {
+    background-color: white;
+  }
+
+  .container-item-b {
+    background-color: white;
+  }
+
+  .container-item-c {
+    background-color: white;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .item-heading {
+    text-decoration: none;
+    color: black;
+  }
+
+  .item-img {
+    position: absolute;
+    right: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 20px
+  }
+
+  .code-container {
+    position: absolute;
+    right: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 120px
+  }
+
+.item-img-alt {
+    position: absolute;
+    left: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 20px
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 250px;
+    left: 0px;
+  }
+
+  .sidebar-item {
+    width: 130px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    font-family: "Futura";
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+  }
+
+  .iconify { width: 0.8em; height: 0.8em; }
+
+  .sidebar-label {
+    padding-left: 4px;
+  }
+
+  pre {
+    font-family: monospace;
+    background-color: #fff;
+    width: 420px;
+    margin: 4em auto;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, .45);
+    line-height: 0;
+    counter-reset: line;
+    text-align: start;
+    font-size: 10px
+ }
+  pre span {
+    display: block;
+    line-height: 1.5rem;
+ }
+  pre span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    color: #888;
+ }
+
+ .grey-text {
+  color: #888;
+ }
+
+</style>
+<head>
+  <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="container-title">
+      <text class="pre-title">Wayde Herman's</text>
+      <h1>Portfolio</h1>
+    </div>
+  </div>
+
+  <div id="sidebar">
+    <a class="sidebar-item" id="linkedin-item" href="https://www.linkedin.com/in/wayde-herman/" target="_blank">
+      <span class="iconify" data-icon="simple-icons:linkedin" data-inline="false"></span>
+      <span class='sidebar-label'>LinkedIn</span>
+    </a>
+    <a class="sidebar-item" id="github-item" href="https://github.com/WaydeHerman" target="_blank">
+      <span class="iconify" data-icon="simple-icons:github" data-inline="false"></span>
+      <span class='sidebar-label'>Github</span>
+    </a>
+    <a class="sidebar-item" id="upwork-item" href="https://www.upwork.com/fl/waydeherman" target="_blank">
+      <span class="iconify" data-icon="simple-icons:upwork" data-inline="false"></span>
+      <span class='sidebar-label'>Upwork</span>
+    </a>
+    <a class="sidebar-item" id="kaggle-item" href="https://www.kaggle.com/waydeherman" target="_blank">
+      <span class="iconify" data-icon="simple-icons:kaggle" data-inline="false"></span>
+      <span class='sidebar-label'>Kaggle</span>
+    </a>
+    <a class="sidebar-item" id="hackerrank-item" href="https://www.hackerrank.com/wayde_h" target="_blank">
+      <span class="iconify" data-icon="simple-icons:hackerrank" data-inline="false"></span>
+      <span class='sidebar-label'>Hacker Rank</span>
+    </a>
+    <a class="sidebar-item" id="contact-item" href="mailto:wayde.h@gmail.com">Contact</a>
+  </div>
+
+
+
+  <div class="container-item container-item-a">
+    <div class="item item-a">
+      <img class='item-img' src="Portfolio-xg.jpg" alt="xg demo" />
+      <div class="text-block text-block-xg">
+        <a href="https://github.com/WaydeHerman/Expected_Goals" target="_blank" class="item-heading"><h4>Expected Goals Model</h4></a>
+        <p>An end-to-end football expected goals model. The predictions are the probability of a shot resulting in a goal.</p>
+        <p>Interesting things about this project include the structure as well as the evaluation of calibration. The code is structured as a pipeline with the code intending to be reusable and modular as opposed to a once off project. Models are tuned using a predefined hyperparameter space stored in dictionaries.</p>
+        <p>The models are evaluated both by their predictive performance as well as the calibration of their predictions. The latter is evaluated using visual inspection of their calibration curves as opposed to a single metric, which is usually advised.</p>
+        <p class='keywords'><b>Keywords:</b> Python (Pandas, Matplotlib) / Logistic Regression / SVM / Random Forest / Gradboost / XGBoost / Calibration / Model Pipeline / D3.js</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-item container-item-b">
+      <div class="item item-b">
+        <img class='item-img' src="Portfolio-kagglecomp.jpg" alt="kaggle comp" />
+        <div class="text-block text-blog-kaggle-comp">
+         <a href="https://github.com/WaydeHerman/Kaggle_CareerCon_2019" target="_blank" class="item-heading"><h4>Kaggle CareerCon 2019</h4></a>
+          <p>My top 2% solution to Kaggle’s CareerCon 2019 competition.</p>
+          <p>Interesting things about this project include the out-of-the-box solution used to overcome the noise in the data. The sequences provided were too noisy to classify accurately so a novel method of chaining together sequences was used. This method was based on the sequences’ orientation data.</p>
+          <p>Each sequence was first labelled using a random forest classifier. Then the sequences were chained together. Each sequence then ‘voted’ for the classification of the entire chain which then overruled each individual sequence’s original labels.</p>
+          <p class='keywords'><b>Keywords: </b>Python / Time Series / Scikit-Learn / Random Forest</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="container-item container-item-c">
+      <div class="item item-c">
+        <div class="code-container">
+          <pre>
+          <span class="grey-text"># Create example dataframe with numbers ranging from 1 to 5:</span>
+          <span>df = pd.DataFrame([1,2,3,4,5], columns=['example'])</span>
+          <span></span>
+          <span>from category_encoders import BinaryEncoder</span>
+          <span></span>
+          <span>example_binary = BinaryEncoder(cols=['example']).fit_transform(df)</span>
+          <span></span>
+          <span>example_binary.head()</span>
+          </pre>
+          </div>
+        <div class="text-block text-blog-map-demo">
+          <a href="https://www.kaggle.com/waydeherman/tutorial-categorical-encoding" target="_blank" class="item-heading"><h4>Categorical Feature Encoding Tutorial</h4></a>
+          <p>My top 2% solution to Kaggle’s CareerCon 2019 competition.</p>
+          <p>In most data science problems, our datasets will contain categorical features. Categorical features contain a finite number of discrete values. How we represent these features will have an impact on the performance of our model. Like in other aspects of machine learning, there are no silver bullets. Determining the correct approach, specific to our model and data is part of the challenge.</p>
+          <p>This tutorial aims to cover a few methods of categorical feature encoding.</p>
+          <p class='keywords'><b>Keywords:</b> Python / Machine Learning / Tutorial</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <div class='division'></div>
+
+
+  </body>
+
+  <div class="footer">
+    </div>
+</body>
+
+<script>
+  
+</script>
