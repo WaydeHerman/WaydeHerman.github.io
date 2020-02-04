@@ -210,11 +210,42 @@
    top: 200px;
  }
 
+         .field-lines {
+            stroke: #faf0e6;
+            stroke-width: 2px;
+        }
+         .shots {
+            stroke: #404E4D;
+            stroke-width: 2px;
+            cursor: pointer;            
+        }
+
+#field {
+    position: absolute;
+    right: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 20px;
+}
+
+               .shot-mouse-over {
+        font-size: 16px;
+        text-anchor: middle;
+        font-weight: bold;
+        font-family: "futura";
+        pointer-events: none;
+        }
+
+        .shot-mouse-over-box {
+            pointer-events: none;
+        }
+
 
 
 </style>
 <head>
   <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
   <div class="header">
@@ -250,10 +281,9 @@
   </div>
 
 
-
-  <div class="container-item container-item-a">
+    <div class="container-item container-item-a">
     <div class="item item-a">
-      <img class='item-img' src="Portfolio-xg.jpg" alt="xg demo" />
+      <div id='field'></div>
       <div class="text-block text-block-xg">
         <a href="https://github.com/WaydeHerman/Expected_Goals" target="_blank" class="item-heading"><h4>Expected Goals Model</h4></a>
         <p>An end-to-end football expected goals model. The model predicts the probability of whether a shot will result in a goal.</p>
@@ -337,6 +367,259 @@
     </div>
 </body>
 
-<script>
-  
-</script>
+  		<script type="text/javascript">
+            var width = 400,
+                height = 550,
+                fieldWidth = 104,
+                fieldHeight = 68,
+                fieldScale = 3.6,
+                fieldColor = "#3A8D4C",
+                fieldStroke = 2,
+                fieldMargin = 20
+        
+        var svg = d3.select('#field').append('svg')
+            .attr('width', width)
+            .attr('height',height);
+
+        var fieldSVG = svg.append('g').attr("transform", "translate(" + width/2 + "," + height*3.5/7 + ")");  
+
+        fieldSVG.append('rect')
+            .attr("width", width)
+            .attr("height", height)
+            .attr("y", -height/2)
+            .attr("x", -width/2)
+            .style("fill", "white")
+
+        //Draw Field:
+        fieldSVG.append('rect')
+            .attr("width", fieldWidth*fieldScale + fieldMargin)
+            .attr("height", fieldHeight*fieldScale + fieldMargin)
+            .attr("y", (-fieldHeight*fieldScale/2) - fieldMargin/2)
+            .attr("x", (-fieldWidth*fieldScale/2) - fieldMargin/2)
+            .style("fill", fieldColor)
+
+        fieldSVG.append('rect')
+            .attr("width", (fieldWidth*fieldScale))
+            .attr("height", (fieldHeight*fieldScale))
+            .attr("y", (-fieldHeight*fieldScale/2))
+            .attr("x", (-fieldWidth*fieldScale/2))
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('circle')
+            .attr("r", 9.15*fieldScale)
+            .attr("cx", (-fieldWidth+22)*fieldScale/2)
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('rect')
+            .attr("width", (16.5*fieldScale))
+            .attr("height", (40.32*fieldScale))
+            .attr("y", (-fieldHeight*fieldScale/2)+(40.32*fieldScale)/3)
+            .attr("x", (-fieldWidth*fieldScale/2))
+            .style("fill", fieldColor)
+            .attr('class', 'field-lines')
+    
+        fieldSVG.append('circle')
+            .attr("r", 9.15*fieldScale)
+            .attr("cx", (fieldWidth-22)*fieldScale/2)
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('rect')
+            .attr("width", (16.5*fieldScale))
+            .attr("height", (40.32*fieldScale))
+            .attr("y", (-fieldHeight*fieldScale/2)+(40.32*fieldScale)/3)
+            .attr("x", (fieldWidth*fieldScale/2)-(16.5*fieldScale))
+            .style("fill", fieldColor)
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('rect')
+            .attr("width", (5.5*fieldScale))
+            .attr("height", (18.32*fieldScale))
+            .attr("y", (-fieldHeight*fieldScale/2)+(18.32*fieldScale/0.75))
+            .attr("x", (-fieldWidth*fieldScale/2))
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('rect')
+            .attr("width", (5.5*fieldScale))
+            .attr("height", (18.32*fieldScale))
+            .attr("y", (-fieldHeight*fieldScale/2)+(18.32*fieldScale/0.75))
+            .attr("x", (fieldWidth*fieldScale/2)-(5.5*fieldScale))
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('circle')
+            .attr("r", 9.15*fieldScale)
+            .style("fill", "none")
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('circle')
+            .attr("r", 0.5*fieldScale)
+            .style("fill", "#fff8b5")
+        
+        fieldSVG.append('line')
+            .attr("y1", -fieldHeight*fieldScale/2)
+            .attr("y2", fieldHeight*fieldScale/2)
+            .attr('class', 'field-lines')
+        
+        fieldSVG.append('line')
+            .attr("x1", (-fieldWidth*fieldScale/2)-fieldStroke)
+            .attr("x2", (-fieldWidth*fieldScale/2)-fieldStroke)
+            .attr("y1", -7.32*fieldScale/2)
+            .attr("y2", 7.32*fieldScale/2)
+            .attr('class', 'field-lines')
+
+        fieldSVG.append('line')
+            .attr("x1", (fieldWidth*fieldScale/2)+fieldStroke)
+            .attr("x2", (fieldWidth*fieldScale/2)+fieldStroke)
+            .attr("y1", -7.32*fieldScale/2)
+            .attr("y2", 7.32*fieldScale/2)
+            .attr('class', 'field-lines')
+
+        var z = d3.scaleSqrt()
+            .domain([0,1])
+            .range([1.6, 12]);
+
+        var xField = d3.scaleLinear()
+            .domain([0,100])
+            .range([-fieldWidth*fieldScale/2, fieldWidth*fieldScale/2]);
+
+        var yField = d3.scaleLinear()
+            .domain([0,100])
+            .range([-fieldHeight*fieldScale/2, fieldHeight*fieldScale/2]);
+
+        var data = [{team: "teamA", x: "19.099999999999994", y: "50.1", xg: "0.049163225249691946"},
+                    {team: "teamB", x: "19.200000000000003", y: "48.8", xg: "0.04123696243076821"},
+                    {team: "teamB", x: "12.400000000000006", y: "38.8", xg: "0.30378442403443956"},
+                    {team: "teamA", x: "5.400000000000006", y: "50.5", xg: "0.42880183894184826"},
+                    {team: "teamA", x: "12.200000000000003", y: "36.5", xg: "0.068318487036355"},
+                    {team: "teamB", x: "20.400000000000006", y: "67.3", xg: "0.02385030975947764"},
+                    {team: "teamB", x: "10.099999999999994", y: "51.3", xg: "0.22983901298244358"},
+                    {team: "teamA", x: "6.299999999999997", y: "58.6", xg: "0.28423535197399385"},
+                    {team: "teamA", x: "8.0", y: "48.4", xg: "0.07314332037687556"},
+                    {team: "teamB", x: "9.200000000000003", y: "45.2", xg: "0.09555792234152227"}, 
+                    {team: "teamB", x: "9.700000000000003", y: "52.2", xg: "0.053313529472032335"},
+                    {team: "teamB", x: "18.700000000000003", y: "49.0", xg: "0.04332141339810828"},
+                    {team: "teamA", x: "20.0", y: "47.8", xg: "0.059518546663265"},
+                    {team: "teamB", x: "18.200000000000003", y: "44.5", xg: "0.05156731647618343"},
+                    {team: "teamB", x: "20.400000000000006", y: "72.0", xg: "0.016996474168093058"},
+                    {team: "teamB", x: "11.900000000000006", y: "45.4", xg: "0.07342756295733784"}, 
+                    {team: "teamB", x: "11.599999999999994", y: "52.1", xg: "0.1815532678621442"},
+                    {team: "teamB", x: "9.400000000000006", y: "57.5", xg: "0.33159680036278755"},
+                    {team: "teamB", x: "25.799999999999997", y: "63.1", xg: "0.019595377407318888"}]
+        
+        shots = fieldSVG.selectAll("shots")
+          .data(data)
+          .enter()
+          .append("circle")
+          .attr("r", function(d) {
+            return z(+d.xg)
+          })
+          .attr("class", "shots")
+          .attr("cx", function(d) {
+            if (d.team === "teamA") {
+              return xField(+d.x)
+            } else {
+              return xField(100 - +d.x)
+            }
+          })
+          .attr("cy", function(d) {
+            if (d.team === "teamA") {
+              return xField(+d.y)
+            } else {
+              return xField(100 - +d.y)
+            }
+          })
+          .style("fill", function(d) {
+            if (d.team === "teamA") {
+              return "#CD2E33"
+            } else {
+              return "#1D587A"
+            }
+          })
+          .on("mouseover", function(d) {shotMouseOver(d)})
+          .on("mouseout", shotMouseOut)
+
+          var formatComma = d3.format(".2f")
+
+                  function shotMouseOver(data) {
+            
+            var dummyHoverText = fieldSVG.append("text")
+                .attr("id", 'shot-mouse-over-dummy-text')
+                .attr('class', 'shot-mouse-over')
+                .attr("x", function() {
+                    if (data.team === "teamA") {
+                        return xField(data.x)
+                    } else {
+                        return xField(100 - data.x)
+                    }})
+                .attr("y", function() {
+                    if (data.team === "teamA") {
+                        return yField(data.y)
+                    } else {
+                        return yField(100 - data.y)
+                    }})
+                .attr("dy", function() {return -z(data.xg)-5})
+                .attr('fill-opacity', 1)
+                .text(function() {
+
+                        return formatComma(data.xg)
+                })
+                    
+                    
+            
+            var toolBox = fieldSVG.append('rect')
+                .attr("id", 'shot-mouse-over-box')
+                .attr("x", function() {
+                    if (data.team === "teamA") {
+                        return xField(data.x)-dummyHoverText.node().getBoundingClientRect().width/2-3
+                    } else {
+                        return xField(100 - data.x)-dummyHoverText.node().getBoundingClientRect().width/2-3
+                    }})
+                .attr("y", function() {
+                    if (data.team === "teamA") {
+                        return yField(data.y)-z(data.xg)-20
+                    } else {
+                        return yField(100 - data.y)-z(data.xg)-20
+                    }})
+                .attr("width", function() {return dummyHoverText.node().getBoundingClientRect().width + 6})
+                .attr("height", 18)
+                .style("fill", "#faf0e6")
+                .attr('fill-opacity', 0.8)
+
+            var hoverText = fieldSVG.append("text")
+                .attr("id", 'shot-mouse-over-text')
+                .attr('class', 'shot-mouse-over')
+                .attr("x", function() {
+                    if (data.team === "teamA") {
+                        return xField(data.x)
+                    } else {
+                        return xField(100 - data.x)
+                    }})
+                .attr("y", function() {
+                    if (data.team === "teamA") {
+                        return yField(data.y)
+                    } else {
+                        return yField(100 - data.y)
+                    }})
+                .attr("dy", function() {return -z(data.xg)-5})
+                .attr('fill-opacity', 1)
+                .text(function() {
+
+                        return formatComma(data.xg)
+                })
+
+        }
+
+        function shotMouseOut() {
+        // Select text by id and then remove
+            d3.select("#shot-mouse-over-text").remove(); 
+            d3.select("#shot-mouse-over-dummy-text").remove();
+            d3.select("#shot-mouse-over-box").remove(); 
+        }
+
+
+  </script>
+
